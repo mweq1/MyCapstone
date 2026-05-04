@@ -1,6 +1,6 @@
 A high-performance, privacy-first RAG system for instant document analysis.
 
-Universal AI allows you to chat with PDF, DOCX, and TXT files locally. By leveraging an in-memory FAISS vector store and Llama 3.2, this system eliminates the minutes of waiting required by traditional disk-based databases, providing a "Ready!" status in seconds.
+Universal AI allows you to chat with PDF, DOCX files locally. By leveraging an in-memory FAISS vector store and Llama 3.2, this system eliminates the minutes of waiting required by traditional disk-based databases, providing a "Ready!" status in seconds.
 
 🚀 Key Features
 Sub-Minute Ingestion: Optimized chunking and in-memory indexing via FAISS.
