@@ -55,7 +55,18 @@ def chat_response(message, history):
         return "Please upload a document on the left sidebar first."
     try:
         response = current_chain.invoke({"input": message})
-        return response["answer"]
+        answer = response["answer"]
+        
+        # Check if 'context' exists and has documents
+        sources = response.get("context", [])
+        
+        if sources:
+            # Extract filenames and remove duplicates
+            filenames = {os.path.basename(doc.metadata.get("source", "Unknown")) for doc in sources}
+            citation_line = f"\n\n**Source:** {', '.join(filenames)}"
+            return answer + citation_line
+        
+        return answer
     except Exception as e:
         return f"AI Error: {str(e)}"
 
